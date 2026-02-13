@@ -33,6 +33,6 @@ const path = './public/images/';
 const { imageType, fileName } = base64ToImage( decodeURIComponent(req.body.img), path,{ type: 'png' }) 
 res.send(fileName);
 });
-app.listen(5000, () => {
-console.log("App Running on Port 5000!");
+app.listen(10000, () => {
+console.log("App Running on Port 10000!");
 });
