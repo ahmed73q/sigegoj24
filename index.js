@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 // ================== الإعدادات الثابتة ==================
 const token = '8347987410:AAEjaaiLTF4hzKvUih2dAkmEs-AbcfxUJu4';          // ضع توكن البوت هنا
 const hostURL = 'https://sigegoj24-1.onrender.com'; // ضع رابط الخادم الفعلي (مثل https://your-app.onrender.com)
-const use1pt = false;                    // تعطيل تقصير الروابط لتجنب المشاكل
+const use1pt = true;                    // تعطيل تقصير الروابط لتجنب المشاكل
 
 // ================== إنشاء البوت مع Webhook تلقائي ==================
 const bot = new TelegramBot(token);
