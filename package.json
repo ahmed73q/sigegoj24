@@ -1,23 +1,33 @@
 {
-  "name": "Psi",
-  "version": "0.0.1",
-  "description": "Information Gathering Through Link",
+  "name": "educational-security-lab",
+  "version": "1.0.0",
+  "description": "مشروع تعليمي لفهم آليات عمل تطبيقات الويب وتفاعلها مع المتصفح (للاستخدام الشخصي والتعليمي فقط)",
   "main": "index.js",
   "scripts": {
-    "test" : "echo mic test  1 ",
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "keywords": [],
-  "author": {
-   "name" : "Prateek Chaubey",
-   "url" : "https://git.io/prateek"
-  },
+  "keywords": [
+    "educational",
+    "security",
+    "nodejs",
+    "telegram-bot",
+    "learning"
+  ],
+  "author": "للتعلم الشخصي",
   "license": "MIT",
   "dependencies": {
-    "app": "^0.1.0",
-    "base64-to-image": "^1.0.2",
-    "body-parser": "^1.19.1",
-    "ejs": "^3.1.6",
-    "express": "^4.17.2"
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "node-fetch": "^2.6.7",
+    "node-telegram-bot-api": "^0.61.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }
