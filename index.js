@@ -14,7 +14,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 // ================== الإعدادات الثابتة ==================
 const token = '8619883948:AAHLY15CrJIhe545S8CAI7gvIW3KLxbP3n0';          // ضع توكن البوت هنا
-const hostURL = 'https://yourdomain.com'; // ضع رابط الخادم هنا (مثال: https://your-app.onrender.com)
+const hostURL = 'https://sigegoj24-1.onrender.com'; // ضع رابط الخادم هنا (مثال: https://your-app.onrender.com)
 const use1pt = true;                    // تعطيل تقصير الروابط لتجنب المشاكل
 
 // ================== إنشاء البوت مع Webhook ==================
