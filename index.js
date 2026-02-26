@@ -13,20 +13,26 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 // ================== الإعدادات الثابتة ==================
-const token = '8619883948:AAHLY15CrJIhe545S8CAI7gvIW3KLxbP3n0';          // ضع توكن البوت هنا
-const hostURL = 'https://sigegoj24-1.onrender.com'; // ضع رابط الخادم هنا (مثال: https://your-app.onrender.com)
-const use1pt = true;                    // تعطيل تقصير الروابط لتجنب المشاكل
+const token = '8347987410:AAEjaaiLTF4hzKvUih2dAkmEs-AbcfxUJu4';          // ضع توكن البوت هنا
+const hostURL = 'https://sigegoj24-1.onrender.com'; // ضع رابط الخادم الفعلي (مثل https://your-app.onrender.com)
+const use1pt = false;                    // تعطيل تقصير الروابط لتجنب المشاكل
 
-// ================== إنشاء البوت مع Webhook ==================
+// ================== إنشاء البوت مع Webhook تلقائي ==================
 const bot = new TelegramBot(token);
 const webhookPath = '/webhook';
 
-bot.setWebHook(`${hostURL}${webhookPath}`).then(() => {
-    console.log(`✅ Webhook set to ${hostURL}${webhookPath}`);
-}).catch(err => {
-    console.error("❌ Failed to set webhook:", err);
-});
+// التحقق من أن hostURL ليس القيمة الافتراضية قبل محاولة تعيين webhook
+if (hostURL !== 'https://yourdomain.com') {
+    bot.setWebHook(`${hostURL}${webhookPath}`).then(() => {
+        console.log(`✅ Webhook set to ${hostURL}${webhookPath}`);
+    }).catch(err => {
+        console.error("❌ Failed to set webhook:", err);
+    });
+} else {
+    console.warn("⚠️  hostURL is not set. Webhook not configured. Please update hostURL.");
+}
 
+// نقطة استقبال التحديثات من تليجرام
 app.post(webhookPath, (req, res) => {
     bot.processUpdate(req.body);
     res.sendStatus(200);
